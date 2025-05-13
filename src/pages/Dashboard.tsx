@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Coins, TrendingUp, LineChart, Wallet } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 import StatsCard from '@/components/ui/stats-card';
 import StrategyCard from '@/components/dashboard/StrategyCard';
@@ -8,6 +9,8 @@ import PerformanceChart from '@/components/dashboard/PerformanceChart';
 import { Button } from '@/components/ui/button';
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+  
   const strategies = [
     {
       title: 'Liquid Staking',
@@ -48,7 +51,10 @@ const Dashboard = () => {
           </p>
         </div>
         <div className="flex gap-3">
-          <Button className="bg-bitcoin hover:bg-bitcoin/90 text-white">
+          <Button 
+            className="bg-bitcoin hover:bg-bitcoin/90 text-white"
+            onClick={() => navigate('/deposit')}
+          >
             Deposit zBTC
           </Button>
         </div>

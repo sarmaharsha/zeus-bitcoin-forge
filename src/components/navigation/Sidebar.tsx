@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
 
 type SidebarItemProps = {
   icon: React.ReactNode;
@@ -53,6 +54,11 @@ const Sidebar = ({ activePath }: SidebarProps) => {
     { icon: <HelpCircle size={18} />, label: "Help", href: "/help" },
   ];
 
+  const handleLaunchApollo = () => {
+    window.open('https://apollo.zeusnetwork.io', '_blank');
+    toast('Opening APOLLO to mint zBTC');
+  };
+
   return (
     <aside className="hidden lg:flex flex-col w-64 p-4 border-r border-zinc-800 h-[calc(100vh-73px)]">
       <div className="flex-1 space-y-1 mt-6">
@@ -82,7 +88,7 @@ const Sidebar = ({ activePath }: SidebarProps) => {
       <div className="mt-6 p-4 rounded-lg bg-gradient-to-br from-zinc-800/60 to-zinc-900 border border-zinc-800">
         <h3 className="font-medium text-bitcoin mb-2">Mint zBTC</h3>
         <p className="text-xs text-zinc-400 mb-3">Convert your BTC to zBTC to start earning yield</p>
-        <Button className="w-full" size="sm">
+        <Button className="w-full" size="sm" onClick={handleLaunchApollo}>
           <Zap className="mr-2 h-3.5 w-3.5" />
           Launch APOLLO
         </Button>

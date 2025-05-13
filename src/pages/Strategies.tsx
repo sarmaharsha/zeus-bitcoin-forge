@@ -2,9 +2,13 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { TrendingUp, Target, ChartLine } from 'lucide-react';
+import { TrendingUp, Target, ChartLine, ArrowLeft } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { useNavigate } from 'react-router-dom';
 
 const Strategies = () => {
+  const navigate = useNavigate();
+  
   const strategies = [
     {
       id: 1,
@@ -62,6 +66,15 @@ const Strategies = () => {
     <div className="container mx-auto max-w-6xl py-6">
       <div className="flex flex-col gap-6">
         <div>
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="mb-4" 
+            onClick={() => navigate('/')}
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Dashboard
+          </Button>
           <h1 className="text-3xl font-bold mb-2">Strategies</h1>
           <p className="text-muted-foreground">Optimize your zBTC holdings with our yield strategies</p>
         </div>

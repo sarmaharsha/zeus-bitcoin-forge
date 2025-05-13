@@ -9,8 +9,15 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { toast } from "sonner";
 
 const Header = () => {
+  const handleConnectWallet = () => {
+    // Open Apollo in a new tab
+    window.open('https://apollo.zeusnetwork.io', '_blank');
+    toast('Connecting to APOLLO wallet');
+  };
+
   return (
     <header className="border-b border-zinc-800 py-4 px-6">
       <div className="container max-w-7xl mx-auto flex items-center justify-between">
@@ -38,7 +45,7 @@ const Header = () => {
         </nav>
         
         <div className="flex items-center space-x-2">
-          <Button className="bg-zinc-800 hover:bg-zinc-700">
+          <Button className="bg-zinc-800 hover:bg-zinc-700" onClick={handleConnectWallet}>
             <Zap className="mr-2 h-4 w-4 text-bitcoin" />
             Connect Wallet
           </Button>

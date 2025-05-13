@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import Strategies from "./pages/Strategies";
 import Analytics from "./pages/Analytics";
 import Learn from "./pages/Learn";
+import Deposit from "./pages/Deposit";
 
 const queryClient = new QueryClient();
 
@@ -20,9 +21,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/strategies" element={<Strategies />} />
-          <Route path="/analytics" element={<Analytics />} />
-          <Route path="/learn" element={<Learn />} />
+          <Route path="/strategies" element={<Index />} />
+          <Route path="/analytics" element={<Index />} />
+          <Route path="/learn" element={<Index />} />
+          <Route path="/deposit" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
