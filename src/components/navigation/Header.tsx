@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Wallet, Lightning, Zap, ChevronDown } from 'lucide-react';
+import { Wallet, Zap, ChevronDown } from 'lucide-react';
 import { 
   DropdownMenu,
   DropdownMenuContent,
@@ -15,7 +15,7 @@ const Header = () => {
     <header className="border-b border-zinc-800 py-4 px-6">
       <div className="container max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Lightning className="h-8 w-8 text-bitcoin" />
+          <Zap className="h-8 w-8 text-bitcoin" />
           <span className="text-2xl font-bold font-montserrat">
             <span className="text-bitcoin">z</span>
             <span className="text-white">Yield</span>

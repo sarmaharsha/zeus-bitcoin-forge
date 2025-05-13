@@ -8,7 +8,7 @@ import {
   BookOpen, 
   Settings, 
   HelpCircle,
-  Lightning
+  Zap
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -83,7 +83,7 @@ const Sidebar = ({ activePath }: SidebarProps) => {
         <h3 className="font-medium text-bitcoin mb-2">Mint zBTC</h3>
         <p className="text-xs text-zinc-400 mb-3">Convert your BTC to zBTC to start earning yield</p>
         <Button className="w-full" size="sm">
-          <Lightning className="mr-2 h-3.5 w-3.5" />
+          <Zap className="mr-2 h-3.5 w-3.5" />
           Launch APOLLO
         </Button>
       </div>
