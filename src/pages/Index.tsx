@@ -1,11 +1,23 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useState } from 'react';
+import Header from '@/components/navigation/Header';
+import Sidebar from '@/components/navigation/Sidebar';
+import Dashboard from '@/pages/Dashboard';
+import { useLocation } from 'react-router-dom';
 
 const Index = () => {
+  const location = useLocation();
+  
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-background flex flex-col">
+      <Header />
+      <div className="flex flex-1">
+        <Sidebar activePath={location.pathname} />
+        <main className="flex-1 p-6">
+          <div className="container mx-auto max-w-6xl">
+            <Dashboard />
+          </div>
+        </main>
       </div>
     </div>
   );
